@@ -14,20 +14,20 @@ const NavBar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
-  const [navStick, setNavStick] = useState(false);
+  // const [navStick, setNavStick] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 500) {
-        setNavStick(true);
-      } else {
-        setNavStick(false);
-      }
-    });
-    return () => {
-      window.removeEventListener("scroll", () => {});
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", () => {
+  //     if (window.scrollY > 500) {
+  //       setNavStick(true);
+  //     } else {
+  //       setNavStick(false);
+  //     }
+  //   });
+  //   return () => {
+  //     window.removeEventListener("scroll", () => {});
+  //   };
+  // }, []);
 
   return (
     <div className="work-sans flex fixed justify-center items-center mx-auto z-40  w-full mt-3">
