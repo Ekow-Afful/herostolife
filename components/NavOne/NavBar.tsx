@@ -8,7 +8,6 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import { FaPlus } from "react-icons/fa6";
-import { FaTimes } from "react-icons/fa";
 import NavDrop from "./NavDrop";
 
 const NavBar = () => {
