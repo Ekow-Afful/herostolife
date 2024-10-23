@@ -7,7 +7,7 @@ const images = [
   "/projects/beafit.png",
  "/projects/art.png",
   "/projects/trust-power.png",
- "/projects/trust_design.png",
+ "/projects/trust_design.jpg",
   "/projects/heroestolife_1.png",
   "/projects/portfolio.png",
   "/projects/game.png",
