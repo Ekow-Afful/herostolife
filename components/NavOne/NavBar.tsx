@@ -31,7 +31,7 @@ const NavBar = () => {
 
   return (
     <div className="work-sans flex fixed justify-center items-center mx-auto z-40 w-full mt-3">
-      <div className="flex flex-col gap-4 md:w-[620px] w-[520px] mx-auto sm:mt-0  bg-transparent ">
+      <div className="flex flex-col gap-4 md:w-[620px] sm:w-[550px] w-[375px] mx-auto sm:mt-0  bg-transparent ">
         <motion.nav
           variants={navVariants}
           initial="hidden"

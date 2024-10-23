@@ -31,8 +31,8 @@ const CarouselComponent = () => {
             <CarouselItem key={index}>
               <div className="p-1">
                 <Card>
-                  <CardContent className="flex w-[100%] h-[85vh] mx-auto items-center justify-center p-0">
-                    <span className="md:text-[100px] sm:text-[70px] text-[60px] font-semibold">
+                  <CardContent className="flex w-[100%] sm:h-[85vh] h-[75vh] mx-auto items-center justify-center p-0">
+                    <span className="md:text-[100px] sm:text-[70px] text-[55px] font-semibold">
                       {herotext.title}
                     </span>
                   </CardContent>

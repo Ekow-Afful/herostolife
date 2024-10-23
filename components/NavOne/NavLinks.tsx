@@ -4,7 +4,7 @@ import React from 'react'
 
 const NavLinks = () => {
   return (
-    <div className="flex gap-[120px] justify-start items-start text-[#888686] text-[13px] pl-2">
+    <div className="flex sm:gap-[120px] gap-[55px] justify-start items-start text-[#888686] text-[13px] pl-2">
         {navLinks.map((item) => (
           <div key={item.title} className="flex flex-col gap-2">
             <h3 className="hover:underline cursor-pointer">{item.title}</h3>

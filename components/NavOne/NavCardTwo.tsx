@@ -12,7 +12,7 @@ const NavCardTwo = () => {
           alt="qwer"
           width={800}
           height={200}
-          className=" object-cover h-[267px] rounded-[12px]"
+          className=" object-cover md:h-[267px] h-[359.5px] rounded-[12px]"
         />
       </div>
 
