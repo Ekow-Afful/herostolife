@@ -39,6 +39,32 @@ export const navVariants = {
       },
     },
   };
+
+  export const hoder = {
+    hidden: {
+      opacity: 0,
+      scale: 0.5,
+      y: -100,
+      x: -50,
+      transition: {
+        type: "tween",
+        stiffness: 300,
+        damping: 50,
+      },
+    },
+    show: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      x: 0,
+      transition: {
+        type: "tween",
+        stiffness: 100,
+        delay: 0.1,
+      },
+    },
+  };
+  
   
   export const slideIn = (direction, type, delay, duration) => ({
     hidden: {

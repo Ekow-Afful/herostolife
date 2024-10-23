@@ -12,6 +12,7 @@ import {
 } from "./ui/carousel";
 import { heroTexts } from "@/constants";
 
+
 const CarouselComponent = () => {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: false })
@@ -31,7 +32,7 @@ const CarouselComponent = () => {
               <div className="p-1">
                 <Card>
                   <CardContent className="flex w-[100%] h-[85vh] mx-auto items-center justify-center p-0">
-                    <span className="text-[100px] font-semibold">
+                    <span className="md:text-[100px] sm:text-[70px] text-[60px] font-semibold">
                       {herotext.title}
                     </span>
                   </CardContent>

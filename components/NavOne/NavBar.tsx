@@ -30,13 +30,13 @@ const NavBar = () => {
   // }, []);
 
   return (
-    <div className="work-sans flex fixed justify-center items-center mx-auto z-40  w-full mt-3">
-      <div className="flex flex-col gap-4 w-[620px] mx-auto sm:mt-0  bg-transparent ">
+    <div className="work-sans flex fixed justify-center items-center mx-auto z-40 w-full mt-3">
+      <div className="flex flex-col gap-4 md:w-[620px] w-[520px] mx-auto sm:mt-0  bg-transparent ">
         <motion.nav
           variants={navVariants}
           initial="hidden"
           whileInView="show"
-          className="flex justify-between items-center gap-0 text-[#ffffff] bg-[#111112] shadow-xl  shadow-[#111111] rounded-[12px] z-50 p-1"
+          className="flex justify-between items-center gap-0 text-[#ffffff] bg-[#111112] shadow-xl  shadow-[#111111] rounded-[12px] z-50 p-1 sm:border-none border-[0.1px] border-[#383636]"
         >
           <Link href="/" className="w-12 h-12 flex justify-center items-center">
             <Image
@@ -50,7 +50,7 @@ const NavBar = () => {
             />
           </Link>
 
-          <div className="flex lg:gap-10 gap-4 items-center lg:text-[15px] text-white">
+          <div className="flex lg:gap-10 md:gap-8 gap-6 items-center lg:text-[15px] text-white">
             <Link href="">
               <div className="group relative hidden sm:flex">
                 <h2 className="">About</h2>
@@ -78,7 +78,7 @@ const NavBar = () => {
             </Link>
           </div>
           <div
-            className="cursor-pointer w-12 h-12 flex justify-center items-center rounded-[10px] text-[19px] bg-transparent hover:bg-white transition-colors duration-300 hover:text-black"
+            className="cursor-pointer w-12 h-12 flex justify-center items-center rounded-[10px] text-[19px] bg-transparent hover:bg-white transition-colors duration-300 hover:text-black sm:border-none border-[0.1px] border-[#383636]"
             onClick={handleClick}
           >
             <div

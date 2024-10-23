@@ -139,7 +139,7 @@ const Carousel = React.forwardRef<
         <div
           ref={ref}
           onKeyDownCapture={handleKeyDown}
-          className={cn("relative rounded-[10px] bg-[#D6DCDC]  text-card-foreground shadow", className)}
+          className={cn("relative rounded-[10px] bg-[#ffffff]  text-card-foreground shadow", className)}
           role="region"
           aria-roledescription="carousel"
           {...props}
@@ -208,9 +208,9 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-14 w-14 rounded-[8px] bg-black text-white",
+        "absolute lg:h-14 lg:w-14 md:h-12 md:w-12 rounded-[8px] bg-black text-white z-50",
         orientation === "horizontal"
-          ? "left-[90.5%] top-[90%]"
+          ? "xl:left-[90.5%] xl:top-[90%] md:left-[86.6%] md:top-[90%] left-[4%] top-[90%]"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
@@ -236,9 +236,9 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-14 w-14 rounded-[8px] bg-black text-white",
+        "absolute lg:h-14 lg:w-14 md:h-12 md:w-12 rounded-[8px] bg-black text-white z-50",
         orientation === "horizontal"
-          ? "left-[95%] top-[90%]"
+          ? "xl:left-[95%] xl:top-[90%] md:left-[93%] md:top-[90%] right-[4%] top-[90%]"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
