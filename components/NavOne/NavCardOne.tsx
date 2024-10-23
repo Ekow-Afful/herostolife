@@ -17,7 +17,7 @@ const NavCardOne = () => {
     </div>
 
     <div className="px-2">
-      <p className="text-[#888686] text-[13px]">October 21 2024</p>
+      <p className="text-[#888686] text-[13px]">October 23 2024</p>
       <p>THE FIRST IN THE HEROES TO LIFE SERIES DROPS</p>
     </div>
 

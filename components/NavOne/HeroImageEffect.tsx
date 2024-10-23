@@ -4,70 +4,81 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const images = [
-  "/luffy.jpg",
-  "/purple.jpg",
-  "/zoro_1.jpg",
-  "/toji.jpg",
-  "/zoro_2.jpg",
+  "/projects/beafit.png",
+ "/projects/art.png",
+  "/projects/trust-power.png",
+ "/projects/trust_design.png",
+  "/projects/heroestolife_1.png",
+  "/projects/portfolio.png",
+  "/projects/game.png",
+  "/projects/facol.png",
+  "/projects/wear.png",
+  "/projects/royal_web.png",
 ];
 
+// Interface to define the structure of the image display object
 interface ImageDisplay {
   id: number; // Unique identifier for each image
-  index: number; // Image index
-  position: { x: number; y: number }; // Position of the image
+  index: number; // Index of the image in the array
+  position: { x: number; y: number }; // X and Y coordinates for positioning the image
 }
 
 const HeroImageEffect: React.FC = () => {
-  const [imageDisplays, setImageDisplays] = useState<ImageDisplay[]>([]);
+  const [imageDisplays, setImageDisplays] = useState<ImageDisplay[]>([]); // Stores the list of images displayed
   const [lastPosition, setLastPosition] = useState<{ x: number; y: number }>({
     x: 0,
     y: 0,
-  });
-  const [imageIndex, setImageIndex] = useState(0); // To track the current index for sequential images
+  }); // Tracks the last mouse position
+  const [imageIndex, setImageIndex] = useState(0); // Index for cycling through images in the array
 
-  const movementThreshold = 450; // Adjust for responsiveness
+  const movementThreshold = 450; // Threshold distance for triggering a new image display
 
   useEffect(() => {
+    // Function to handle mouse movement and track the distance moved
     const handleMouseMove = (e: MouseEvent) => {
-      const deltaX = e.clientX - lastPosition.x; // Keep the sign (positive/negative)
-      const deltaY = e.clientY - lastPosition.y; // Keep the sign (positive/negative)
-      const newDistance = Math.abs(deltaX) + Math.abs(deltaY); // Just check the overall distance, ignoring sign here
+      const deltaX = e.clientX - lastPosition.x; // Difference in X-axis movement
+      const deltaY = e.clientY - lastPosition.y; // Difference in Y-axis movement
+      const newDistance = Math.abs(deltaX) + Math.abs(deltaY); // Total movement distance
 
+      // If the movement exceeds the threshold, show a new image and update the last position
       if (newDistance > movementThreshold) {
-        showNextImage(e.clientX, e.clientY, deltaX, deltaY);
+        showNextImage(e.clientX, e.clientY, );
         setLastPosition({ x: e.clientX, y: e.clientY });
       }
     };
 
-    const showNextImage = (x: number, y: number, deltaX: number, deltaY: number) => {
+    // Function to display the next image based on mouse position and movement direction
+    const showNextImage = (x: number, y: number,) => {
       const newImage = {
-        id: Date.now() + Math.floor(Math.random() * 1000), // Unique ID to differentiate images
-        index: imageIndex, // Use the current index for the image
-        position: { x, y },
+        id: Date.now() + Math.floor(Math.random() * 1000), // Generate a unique ID for each image
+        index: imageIndex, // Use the current index for selecting the image
+        position: { x, y }, // Set the position where the image will appear
       };
 
-      // Add new image to the array with unique id and position
+      // Add the new image to the list of displays
       setImageDisplays((prev) => [...prev, newImage]);
 
-      // Set timeout to remove the image after 1 second
+      // Remove the image after 1 second
       setTimeout(() => {
-        setImageDisplays((prev) => prev.filter((img) => img.id !== newImage.id)); // Remove by ID after 1 second
-      }, 1000); // Image stays for 1 second
+        setImageDisplays((prev) => prev.filter((img) => img.id !== newImage.id));
+      }, 1000);
 
-      // Increment the image index, resetting to 0 if it exceeds the image array length
+      // Cycle through the image array, resetting to 0 when the end is reached
       setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     };
 
+    // Add event listener for mouse movement
     window.addEventListener("mousemove", handleMouseMove);
 
+    // Cleanup: Remove event listener on component unmount
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, [imageIndex, lastPosition]);
 
-  // Function to calculate the adjusted position based on positive or negative values
+  // Function to calculate the offset of the image based on movement direction
   const calculateOffset = (delta: number) => {
-    return -delta / 5; // Inverted offset to match the mouse movement direction
+    return -delta / 5; // Apply a reverse offset to match the movement direction
   };
 
   return (
@@ -75,31 +86,29 @@ const HeroImageEffect: React.FC = () => {
       <AnimatePresence>
         {imageDisplays.map((display) => (
           <motion.img
-            key={display.id} // Use unique id for the key
-            src={images[display.index]}
+            key={display.id} // Use unique ID to track the image in the DOM
+            src={images[display.index]} // Select the image source by index
             alt="Random Display"
-            className="absolute z-40 lg:w-[12%] lg:h-[20%] w-[12%] h-[13%] object-cover"
+            className="absolute z-40 lg:w-[16%] lg:h-[20%] w-[14%] h-[13%] object-cover "
             initial={{
-              x: display.position.x, // Start at the current position
-              y: display.position.y, // Start at the current position
-              
+              x: display.position.x, // Initial X position
+              y: display.position.y, // Initial Y position
             }}
             animate={{
-              x: display.position.x + calculateOffset(display.position.x - lastPosition.x) , // Adjust x based on positive or negative value
-              y: display.position.y + calculateOffset(display.position.y - lastPosition.y), // Adjust y based on positive or negative value
-              opacity: 1,
-              scale: 1,
+              x: display.position.x + calculateOffset(display.position.x - lastPosition.x), // Animate X position with offset
+              y: display.position.y + calculateOffset(display.position.y - lastPosition.y), // Animate Y position with offset
+              opacity: 1, // Fade in
+              scale: 1, // Full scale
             }}
             exit={{
-                x: display.position.x + calculateOffset(display.position.x - lastPosition.x), // Adjust x based on positive or negative value
-                y: display.position.y + calculateOffset(display.position.y - lastPosition.y), // Adjust y based on positive or negative value
-              opacity: 0,
-              scale: 0.2,
+              x: display.position.x + calculateOffset(display.position.x - lastPosition.x), // Exit with adjusted X position
+              y: display.position.y + calculateOffset(display.position.y - lastPosition.y), // Exit with adjusted Y position
+              opacity: 0, // Fade out
+              scale: 0.2, // Scale down on exit
             }}
-           
             transition={{
-              type: "",
-              duration: 0.7,
+              type: "tween", //animation type
+              duration: 0.7, // Duration of the animation
             }}
           />
         ))}

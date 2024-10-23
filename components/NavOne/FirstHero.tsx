@@ -11,9 +11,9 @@ const FirstHero = () => {
         <CarouselComponent />
       </div>
       <div className="absolute flex  z-50 md:left-[13%] md:top-[85%] top-[82%]">
-        {socials.map((social, index) => (
-          <Link href={social.link} target="blank">
-            <div key={social.name} className="text-[25px] px-2">
+        {socials.map((social) => (
+          <Link href={social.link} target="blank" key={social.name}>
+            <div  className="text-[25px] px-2">
               {social.imgUrl}
             </div>
           </Link>
