@@ -31,7 +31,7 @@ const HeroImageEffect: React.FC = () => {
   }); // Tracks the last mouse position
   const [imageIndex, setImageIndex] = useState(0); // Index for cycling through images in the array
 
-  const movementThreshold = 450; // Threshold distance for triggering a new image display
+  const movementThreshold = 430; // Threshold distance for triggering a new image display
 
   useEffect(() => {
     // Function to handle mouse movement and track the distance moved
@@ -61,7 +61,7 @@ const HeroImageEffect: React.FC = () => {
       // Remove the image after 1 second
       setTimeout(() => {
         setImageDisplays((prev) => prev.filter((img) => img.id !== newImage.id));
-      }, 1000);
+      }, 700);
 
       // Cycle through the image array, resetting to 0 when the end is reached
       setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -108,7 +108,7 @@ const HeroImageEffect: React.FC = () => {
             }}
             transition={{
               type: "tween", //animation type
-              duration: 0.7, // Duration of the animation
+              duration: 0.4, // Duration of the animation
             }}
           />
         ))}
