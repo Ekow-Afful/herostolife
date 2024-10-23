@@ -78,7 +78,7 @@ const HeroImageEffect: React.FC = () => {
 
   // Function to calculate the offset of the image based on movement direction
   const calculateOffset = (delta: number) => {
-    return -delta / 5; // Apply a reverse offset to match the movement direction
+    return -delta / 3; // Apply a reverse offset to match the movement direction
   };
 
   return (
