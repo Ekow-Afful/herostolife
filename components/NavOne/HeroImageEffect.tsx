@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 
 const images = [
   "/projects/beafit.png",
@@ -85,10 +86,8 @@ const HeroImageEffect: React.FC = () => {
     <div className="absolute w-full h-full">
       <AnimatePresence>
         {imageDisplays.map((display) => (
-          <motion.img
+          <motion.div
             key={display.id} // Use unique ID to track the image in the DOM
-            src={images[display.index]} // Select the image source by index
-            alt="Random Display"
             className="absolute z-40 lg:w-[16%] lg:h-[20%] w-[14%] h-[13%] object-cover "
             initial={{
               x: display.position.x, // Initial X position
@@ -110,7 +109,9 @@ const HeroImageEffect: React.FC = () => {
               type: "tween", //animation type
               duration: 0.4, // Duration of the animation
             }}
-          />
+          >
+            <Image src={images[display.index]}  alt="random display" width="200" height="100" />
+          </motion.div>
         ))}
       </AnimatePresence>
     </div>
