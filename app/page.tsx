@@ -12,9 +12,13 @@ export default function Home() {
             <p>A new series where I bring hero designs I see to Life</p>
           </div>
           <div className="sm:text-[30px] text-[25px]">Choose Your Hero</div>
-          <div className="text-black">
+          <div className="flex justify-center items-center gap-4 text-black">
             <Link href='/first_hero' >
               <div className="p-4 bg-white text-[20px] font-thin rounded-[10px] hover:text-white hover:bg-black transition-all duration-300">First Hero</div>
+            </Link>
+
+            <Link href='/hero_two' >
+              <div className="p-4 bg-white text-[20px] font-thin rounded-[10px] hover:text-white hover:bg-black transition-all duration-300">Hero Two</div>
             </Link>
             <div></div>
           </div>

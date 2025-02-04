@@ -79,7 +79,7 @@ const HeroImageEffect: React.FC = () => {
 
   // Function to calculate the offset of the image based on movement direction
   const calculateOffset = (delta: number) => {
-    return -delta / 3; // Apply a reverse offset to match the movement direction
+    return - delta / 3; // Apply a reverse offset to match the movement direction
   };
 
   return (
@@ -109,8 +109,9 @@ const HeroImageEffect: React.FC = () => {
               type: "tween", //animation type
               duration: 0.4, // Duration of the animation
             }}
+
           >
-            <Image src={images[display.index]}  alt="random display" width="200" height="100" />
+            <Image src={images[display.index]}  alt="random display" width="200" height="100" className="lg:w-[85%] lg:h-[85%] w-[14%] h-[13%] object-cover" />
           </motion.div>
         ))}
       </AnimatePresence>

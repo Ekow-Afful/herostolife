@@ -50,38 +50,38 @@ export const heroTexts = [
 
   export const socials = [
     {
-      id: "1",
-      name: "Email",
+      id: 1,
+      name: "paakowweb@gmail.com",
       imgUrl: <MdMail />,
       link: "mailto:paakowweb@gmail.com",
     },
     {
-      id: "2",
+      id: 2,
       name: "WhatsApp",
       imgUrl: <RiWhatsappFill />,
       link: "https://wa.link/dkgvxs",
     },
     {
-      id: "3",
+      id: 3,
       name: "Telegram",
       imgUrl: <FaTelegramPlane />,
       link: "https://t.me/damn_michael",
     },
     {
-      id: "4",
+      id: 4,
       name: "GitHub",
       imgUrl: <AiFillGithub />,
       link: "https://github.com/Ekow-Afful",
     },
     {
-      id: "5",
-      name: "linkedin",
+      id: 5,
+      name: "Linkedin",
       imgUrl:  <FaLinkedin />,
       link: "https://www.linkedin.com/in/michael-afful-16614128b/",
     },
     {
-      id: "6",
-      name: "instagram",
+      id: 6,
+      name: "Instagram",
       imgUrl:  <AiFillInstagram />,
       link: "https://www.instagram.com/ekow_dev/",
     },
