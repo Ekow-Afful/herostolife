@@ -10,12 +10,10 @@ const FirstHero = () => {
       <div className="relative justify-center items-center w-[98.6%] h-[85vh] rounded-xl text-black">
         <CarouselComponent />
       </div>
-      <div className="absolute flex  z-50 md:left-[13%] md:top-[85%] sm:top-[82%] top-[72%]">
+      <div className="absolute flex  z-50 md:left-[13%] md:top-[85%] sm:top-[82%] top-[72%] text-black">
         {socials.map((social) => (
           <Link href={social.link} target="blank" key={social.name}>
-            <div  className="text-[25px] px-2">
-              {social.imgUrl}
-            </div>
+            <div className="text-[25px] px-2">{social.imgUrl}</div>
           </Link>
         ))}
       </div>

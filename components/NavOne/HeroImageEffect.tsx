@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 
 const images = [
   "/projects/beafit.png",
- "/projects/art.png",
+  "/projects/art.png",
   "/projects/trust-power.png",
- "/projects/trust_design.jpg",
+  "/projects/trust_design.jpg",
   "/projects/heroestolife_1.png",
   "/projects/portfolio.png",
   "/projects/game.png",
@@ -43,13 +43,13 @@ const HeroImageEffect: React.FC = () => {
 
       // If the movement exceeds the threshold, show a new image and update the last position
       if (newDistance > movementThreshold) {
-        showNextImage(e.clientX, e.clientY, );
+        showNextImage(e.clientX, e.clientY);
         setLastPosition({ x: e.clientX, y: e.clientY });
       }
     };
 
     // Function to display the next image based on mouse position and movement direction
-    const showNextImage = (x: number, y: number,) => {
+    const showNextImage = (x: number, y: number) => {
       const newImage = {
         id: Date.now() + Math.floor(Math.random() * 1000), // Generate a unique ID for each image
         index: imageIndex, // Use the current index for selecting the image
@@ -61,7 +61,9 @@ const HeroImageEffect: React.FC = () => {
 
       // Remove the image after 1 second
       setTimeout(() => {
-        setImageDisplays((prev) => prev.filter((img) => img.id !== newImage.id));
+        setImageDisplays((prev) =>
+          prev.filter((img) => img.id !== newImage.id)
+        );
       }, 700);
 
       // Cycle through the image array, resetting to 0 when the end is reached
@@ -79,7 +81,7 @@ const HeroImageEffect: React.FC = () => {
 
   // Function to calculate the offset of the image based on movement direction
   const calculateOffset = (delta: number) => {
-    return - delta / 3; // Apply a reverse offset to match the movement direction
+    return -delta / 3; // Apply a reverse offset to match the movement direction
   };
 
   return (
@@ -94,14 +96,22 @@ const HeroImageEffect: React.FC = () => {
               y: display.position.y, // Initial Y position
             }}
             animate={{
-              x: display.position.x + calculateOffset(display.position.x - lastPosition.x), // Animate X position with offset
-              y: display.position.y + calculateOffset(display.position.y - lastPosition.y), // Animate Y position with offset
+              x:
+                display.position.x +
+                calculateOffset(display.position.x - lastPosition.x), // Animate X position with offset
+              y:
+                display.position.y +
+                calculateOffset(display.position.y - lastPosition.y), // Animate Y position with offset
               opacity: 1, // Fade in
               scale: 1, // Full scale
             }}
             exit={{
-              x: display.position.x + calculateOffset(display.position.x - lastPosition.x), // Exit with adjusted X position
-              y: display.position.y + calculateOffset(display.position.y - lastPosition.y), // Exit with adjusted Y position
+              x:
+                display.position.x +
+                calculateOffset(display.position.x - lastPosition.x), // Exit with adjusted X position
+              y:
+                display.position.y +
+                calculateOffset(display.position.y - lastPosition.y), // Exit with adjusted Y position
               opacity: 0, // Fade out
               scale: 0.2, // Scale down on exit
             }}
@@ -109,9 +119,14 @@ const HeroImageEffect: React.FC = () => {
               type: "tween", //animation type
               duration: 0.4, // Duration of the animation
             }}
-
           >
-            <Image src={images[display.index]}  alt="random display" width="200" height="100" className="lg:w-[85%] lg:h-[85%] w-[14%] h-[13%] object-cover" />
+            <Image
+              src={images[display.index]}
+              alt="random display"
+              width="200"
+              height="100"
+              className="lg:w-[85%] lg:h-[85%] w-[14%] h-[13%] object-cover"
+            />
           </motion.div>
         ))}
       </AnimatePresence>

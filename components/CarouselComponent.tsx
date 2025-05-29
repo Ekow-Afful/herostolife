@@ -12,7 +12,6 @@ import {
 } from "./ui/carousel";
 import { heroTexts } from "@/constants";
 
-
 const CarouselComponent = () => {
   const plugin = React.useRef(
     Autoplay({ delay: 3500, stopOnInteraction: false })

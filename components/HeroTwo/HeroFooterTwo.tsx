@@ -4,9 +4,9 @@ import React from "react";
 
 const HeroFooterTwo = () => {
   return (
-    <div className="work-sans absolute z-40 bottom-8 flex justify-center items-center w-full overflow-hidden">
-      <div className="flex justify-between w-[94%]">
-        <div className="flex gap-4">
+    <div className="work-sans z-40 pb-4 flex justify-center items-center w-full overflow-hidden">
+      <div className="flex lg:flex-row flex-col items-center justify-between w-[94%] text-[14px] sm:text-lg ">
+        <div className="flex gap-4 ">
           {socials.map(
             (social) =>
               social.id !== 1 && (
@@ -32,7 +32,7 @@ const HeroFooterTwo = () => {
           )}
         </div>
 
-        <div>
+        <div className="hidden lg:flex">
           <p>Talk to me</p>
         </div>
       </div>
