@@ -12,7 +12,7 @@ export function HeroTwo() {
   return (
     <div
       className={`${
-        click ? "dark:bg-[#272626] text-white" : "bg-white text-black"
+        click ? "bg-[#272626] text-white" : "bg-white text-black"
       } work-sans flex flex-col justify-center items-center w-full h-[100dvh] overflow-hidden transition-all duration-700`}
     >
       <NavBarTwo click={click} setClick={setClick} />
@@ -23,36 +23,35 @@ export function HeroTwo() {
         } absolute top-0 left-0 w-[200px] h-[120px] rounded-full  blur-2xl`}
       />
 
-      <div className="w-[80%] sm:w-[70%] h-full flex flex-col justify-center items-center gap-0">
-        <div className="flex justify-center items-center w-full h-[40%]">
-          <p className="text-[2rem] md:text-[3rem] text-center">
+      <div className="w-[80%] sm:w-[70%] h-full flex flex-col justify-center items-center ">
+        <div className="flex justify-center items-center w-full h-[40%] pt-10">
+          <p className="text-[2rem] lg:text-[2.3rem] xl:text-[3rem]  text-center">
             Hi I&apos;m Ekow! A Freelance Frontend developer. Available for hire
           </p>
-          {/* <InteractiveLetters/> */}
         </div>
-        <CardContainer className="w-full h-full">
+        <CardContainer className="w-full h-full ">
           <CardBody className="flex flex-col items-center justify-center sm:w-full sm:h-full w-[80%] h-1/2">
             <Image
-              src="/hero2/background.png"
+              src="/hero2/background.webp"
               alt="3d futuristic image"
               width={450}
               height={200}
               className={`${
                 click ? "hue-rotate-45 brightness-80" : "sepia-0"
-              } rounded-xl border transition-all duration-700 `}
+              } rounded-xl border transition-all duration-700 w-[80%]`}
             />
             <CardItem
               translateZ="100"
               className="absolute w-full h-full flex  items-center justify-center"
             >
               <Image
-                src="/hero2/3d_guy.png"
+                src="/hero2/3dguy.webp"
                 alt="3d futuristic image"
-                width={1000}
+                width={800}
                 height={300}
                 className={`${
                   click ? "grayscale" : "hue-rotate-0"
-                }  object-cover transition-all duration-700 `}
+                }  w-[80%] object-cover transition-all duration-700 scale-110`}
               />
             </CardItem>
           </CardBody>

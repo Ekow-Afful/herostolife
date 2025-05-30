@@ -50,7 +50,7 @@ const TimeAndWeather = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center gap-4 text-[1rem] sm:text-lg">
+    <div className="flex justify-center items-center gap-4 text-[14px] sm:text-lg">
       <p>Accra</p>
       <p>{accraTime}</p>
       <p>{accraTemp}</p>

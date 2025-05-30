@@ -3,6 +3,8 @@ import React from "react";
 
 import TimeAndWeather from "./TimeAndWeather";
 
+const navItems = ["Work", "Services", "Start a project"];
+
 const NavBarTwo = ({
   click,
   setClick,
@@ -28,16 +30,18 @@ const NavBarTwo = ({
         </div>
 
         <div className="flex justify-center items-center gap-4">
-          <div className="lg:flex gap-4 hidden">
-            <Link href="">
-              <p>Work</p>
-            </Link>
-            <Link href="">
-              <p>Services</p>
-            </Link>
-            <Link href="https://michael-dev.vercel.app/" target="_blank">
-              <p>Start a project</p>
-            </Link>
+          <div className="lg:flex gap-4 hidden ">
+            {navItems.map((item) => (
+              <Link
+                key={item}
+                href={`#${item.toLocaleLowerCase()}`}
+                className={`${
+                  click ? " after:bg-white" : "after:bg-neutral-800"
+                } hero-two-nav-hover`}
+              >
+                {item}
+              </Link>
+            ))}
           </div>
 
           <button
