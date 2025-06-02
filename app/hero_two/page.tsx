@@ -1,4 +1,4 @@
-import { HeroTwo } from "@/components/HeroTwo/HeroTwo";
+import { HeroTwo } from "@/app/hero_two/_components/HeroTwo";
 
 export default function Home() {
   return (

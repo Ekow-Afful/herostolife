@@ -1,12 +1,11 @@
-import FirstHero from "@/components/NavOne/FirstHero";
-import NavBar from "@/components/NavOne/NavBar";
-
+import FirstHero from "./_components/FirstHero";
+import NavBar from "./_components/NavBar";
 
 export default function Home() {
   return (
     <div className=" overflow-y-hidden">
-      <NavBar/>
-      <FirstHero/>
+      <NavBar />
+      <FirstHero />
     </div>
   );
 }

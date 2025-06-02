@@ -1,5 +1,5 @@
-import Navbar from "@/components/ZentryHero/Navbar";
-import ZentryHero from "@/components/ZentryHero/ZentryHero";
+import Navbar from "@/app/zentry_hero_3/_components/Navbar";
+import ZentryHero from "@/app/zentry_hero_3/_components/ZentryHero";
 
 export default function Home() {
   return (
