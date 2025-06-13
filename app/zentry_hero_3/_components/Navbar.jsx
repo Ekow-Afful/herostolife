@@ -6,8 +6,9 @@ import { TiLocationArrow } from "react-icons/ti";
 
 import Image from "next/image";
 import Button from "./Button";
+import Link from "next/link";
 
-const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
+const navItems = ["unscripted", "tours", "shoots", "team", "live"];
 
 const Navbar = () => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
@@ -39,19 +40,24 @@ const Navbar = () => {
         <nav className="flex size-full items-center justify-between p-4">
           <div className="flex items-center gap-7">
             <Image
-              src="/img/logo.png"
+              src="/img/ray-logo.jpg"
               alt="logo"
-              className="w-10"
+              className="w-10 rounded-full"
               width={500}
               height={500}
             />
 
-            <Button
-              id="product-button"
-              title="Products"
-              rightIcon={<TiLocationArrow />}
-              containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1"
-            />
+            <Link
+              href="https://www.youtube.com/@officialraygan"
+              target="_blank"
+            >
+              <Button
+                id="product-button"
+                title="Youtube Channel"
+                rightIcon={<TiLocationArrow />}
+                containerClass="!bg-[#FF0000ac] text-white  md:flex hidden items-center justify-center gap-1"
+              />
+            </Link>
           </div>
 
           <div className="flex h-full items-center">
