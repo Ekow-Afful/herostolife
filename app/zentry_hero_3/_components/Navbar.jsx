@@ -6,7 +6,6 @@ import { TiLocationArrow } from "react-icons/ti";
 
 import Image from "next/image";
 import Button from "./Button";
-import Link from "next/link";
 
 const navItems = ["unscripted", "tours", "shoots", "team", "live"];
 
