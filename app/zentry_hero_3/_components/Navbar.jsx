@@ -6,6 +6,7 @@ import { TiLocationArrow } from "react-icons/ti";
 
 import Image from "next/image";
 import Button from "./Button";
+import Link from "next/link";
 
 const navItems = ["unscripted", "tours", "shoots", "team", "live"];
 
@@ -79,7 +80,7 @@ const Navbar = () => {
               <audio
                 ref={audioElementRef}
                 className="hidden"
-                src="zentry/audio/loop.mp3"
+                src="zentry/audio/phonk_bg.mp3"
                 loop
               />
               {[1, 2, 3, 4].map((bar) => (
