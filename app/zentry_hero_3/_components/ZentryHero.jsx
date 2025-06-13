@@ -223,7 +223,7 @@ const ZentryHero = () => {
                   id="watch-trailer"
                   title="Watch Unscripted"
                   leftIcon={<TiLocationArrow />}
-                  containerClass="!bg-[#998cc5] flex-center gap-1"
+                  containerClass="!bg-[#998cfe] flex-center gap-1"
                 />
               </Link>
             </div>
